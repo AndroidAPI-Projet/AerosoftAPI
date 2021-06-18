@@ -50,7 +50,7 @@ $router->map('GET', '/affectation', function() {
     require __DIR__ . '/api/affectation/read.php';
 });
 
-$router->map('GET', '/affectation/[a:IdAffectation]', function($IdAffectation) {
+$router->map('GET', '/affectation/[:IdAffectation]', function($IdAffectation) {
     require __DIR__ . '/api/affectation/singleRead.php';
 });
 
