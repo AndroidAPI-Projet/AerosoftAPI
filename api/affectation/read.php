@@ -30,7 +30,10 @@
 
             array_push($AffectationArr, $resArray);
         }
-        echo json_encode($AffectationArr);
+        
+        $ArrInti['Affectations'] = $AffectationArr;
+
+        echo json_encode($ArrInti);
     }
 
     else{

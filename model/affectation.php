@@ -29,14 +29,7 @@
         }
 
         public function getSingleAffectation(){
-            $sqlQuery = "SELECT
-                        IdAffectation, 
-                        NumVol, 
-                        DateVol,
-                        AffectationCode,
-                        NumAvion,
-                        IdPilote
-                      FROM
+            $sqlQuery = "SELECT * FROM 
                         ". $this->db_table ."
                     WHERE 
                        IdAffectation = ?

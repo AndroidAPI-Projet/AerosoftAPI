@@ -26,7 +26,10 @@
 
             array_push($RoleArr, $resArray);
         }
-        echo json_encode($RoleArr);
+        
+        $ArrInti['Roles'] = $RoleArr;
+
+        echo json_encode($ArrInti);
     }
 
     else{

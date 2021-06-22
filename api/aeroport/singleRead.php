@@ -26,7 +26,10 @@
         );
       
         http_response_code(200);
-        echo json_encode($aeroport_arr);
+
+        $ArrInti['SingleAeroport'] = $aeroport_arr;
+
+        echo json_encode($ArrInti);
     }
       
     else{

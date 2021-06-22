@@ -29,7 +29,10 @@
 
             array_push($VolArr, $resArray);
         }
-        echo json_encode($VolArr);
+
+        $ArrInti['Vols'] = $VolArr;
+
+        echo json_encode($ArrInti);
     }
 
     else{

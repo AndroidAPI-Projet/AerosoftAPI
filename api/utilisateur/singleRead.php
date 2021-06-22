@@ -28,7 +28,9 @@
         );
       
         http_response_code(200);
-        echo json_encode($utilisateur_arr);
+        $ArrInti['SingleUtilisateur'] = $utilisateur_arr;
+
+        echo json_encode($ArrInti);
     }
       
     else{

@@ -29,7 +29,10 @@
 
             array_push($UtilisateurArr, $resArray);
         }
-        echo json_encode($UtilisateurArr);
+        
+        $ArrInti['Utilisateurs'] = $UtilisateurArr;
+
+        echo json_encode($ArrInti);
     }
 
     else{

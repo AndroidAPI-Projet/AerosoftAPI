@@ -27,7 +27,10 @@
 
             array_push($AvionArr, $resArray);
         }
-        echo json_encode($AvionArr);
+        
+        $ArrInti['Avions'] = $AvionArr;
+
+        echo json_encode($ArrInti);
     }
 
     else{

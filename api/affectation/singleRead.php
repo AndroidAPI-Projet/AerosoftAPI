@@ -13,7 +13,15 @@
 
     $item = new Affectation($db);
 
-    $item->IdAffectation = substr($_GET["_url"], -15);
+    $arr1 = explode("/",$_GET["_url"]);
+
+    $subtStart = substr($arr1[2],0,-4);
+    
+    $subtMois = substr($arr1[2],-4,2);
+    
+    $subtJour = substr($arr1[2],-2);
+    
+    $item->IdAffectation = $subtStart."-".$subtMois."-".$subtJour;
   
     $item->getSingleAffectation();
 
@@ -29,7 +37,10 @@
         );
       
         http_response_code(200);
-        echo json_encode($affectation_arr);
+      
+        $ArrInti['SingleAffectation'] = $affectation_arr;
+
+        echo json_encode($ArrInti);
     }
       
     else{

@@ -27,7 +27,9 @@
         );
       
         http_response_code(200);
-        echo json_encode($pilote_arr);
+        $ArrInti['SinglePilote'] = $pilote_arr;
+
+        echo json_encode($ArrInti);
     }
       
     else{

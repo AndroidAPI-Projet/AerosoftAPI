@@ -25,7 +25,9 @@
         );
       
         http_response_code(200);
-        echo json_encode($role_arr);
+        $ArrInti['SingleRole'] = $role_arr;
+
+        echo json_encode($ArrInti);
     }
       
     else{

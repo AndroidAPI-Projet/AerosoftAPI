@@ -28,7 +28,11 @@
 
             array_push($PiloteArr, $resArray);
         }
-        echo json_encode($PiloteArr);
+      
+        
+        $ArrInti['Pilotes'] = $PiloteArr;
+
+        echo json_encode($ArrInti);
     }
 
     else{

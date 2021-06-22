@@ -27,7 +27,9 @@
 
             array_push($AeroportArr, $resArray);
         }
-        echo json_encode($AeroportArr);
+        $ArrInti['Aeroports'] = $AeroportArr;
+
+        echo json_encode($ArrInti);
     }
 
     else{
