@@ -28,8 +28,7 @@
         $ArrInti['SingleRole'] = $role_arr;
 
         echo json_encode($ArrInti);
-    }
-      
+    }      
     else{
         http_response_code(404);
         echo json_encode("Role non trouvé");

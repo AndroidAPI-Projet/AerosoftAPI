@@ -46,6 +46,7 @@
             $itemCount = $stmt->rowCount();
 
             if($itemCount > 0){
+                
                 $this->NumVol = $dataRow['NumVol'];
                 $this->DateVol = $dataRow['DateVol'];
                 $this->AffectationCode = $dataRow['AffectationCode'];
@@ -53,7 +54,7 @@
                 $this->IdPilote = $dataRow['IdPilote'];
 
             }else{
-                
+
                 $this->NumVol = "";
                 $this->DateVol = "";
                 $this->AffectationCode = "";
