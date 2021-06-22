@@ -17,7 +17,7 @@
   
     $item->getSingleRole();
 
-    if($item->IdRole != null){
+    if($item->RoleNom != null){
         // create array
         $role_arr = array(
             "IdRole" =>  $item->IdRole,

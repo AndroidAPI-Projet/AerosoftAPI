@@ -17,7 +17,7 @@
   
     $item->getSinglePilote();
 
-    if($item->IdPilote != null){
+    if($item->NomPilote != null){
         // create array
         $pilote_arr = array(
             "IdPilote" =>  $item->IdPilote,

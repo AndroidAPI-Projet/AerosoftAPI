@@ -25,7 +25,7 @@
   
     $item->getSingleAffectation();
 
-    if($item->IdAffectation != null){
+    if($item->NumVol != null){
         // create array
         $affectation_arr = array(
             "IdAffectation" =>  $item->IdAffectation,
@@ -41,8 +41,7 @@
         $ArrInti['SingleAffectation'] = $affectation_arr;
 
         echo json_encode($ArrInti);
-    }
-      
+    }   
     else{
         http_response_code(404);
         echo json_encode("Affectation non trouvé");

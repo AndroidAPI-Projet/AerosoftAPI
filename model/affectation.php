@@ -42,12 +42,24 @@
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            $this->NumVol = $dataRow['NumVol'];
-            $this->DateVol = $dataRow['DateVol'];
-            $this->AffectationCode = $dataRow['AffectationCode'];
-            $this->NumAvion = $dataRow['NumAvion'];
-            $this->IdPilote = $dataRow['IdPilote'];
+
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
+                $this->NumVol = $dataRow['NumVol'];
+                $this->DateVol = $dataRow['DateVol'];
+                $this->AffectationCode = $dataRow['AffectationCode'];
+                $this->NumAvion = $dataRow['NumAvion'];
+                $this->IdPilote = $dataRow['IdPilote'];
+
+            }else{
+                
+                $this->NumVol = "";
+                $this->DateVol = "";
+                $this->AffectationCode = "";
+                $this->NumAvion = "";
+                $this->IdPilote = ""; 
+            }
         }        
     }
     

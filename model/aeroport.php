@@ -43,9 +43,19 @@
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $itemCount = $stmt->rowCount();
             
-            $this->NomAeroport = $dataRow['NomAeroport'];
-            $this->NomVilleDesservie = $dataRow['NomVilleDesservie'];
+            if($itemCount > 0){
+                
+                $this->NomAeroport = $dataRow['NomAeroport'];
+                $this->NomVilleDesservie = $dataRow['NomVilleDesservie'];
+
+            }else{
+                $this->NomAeroport = "";
+                $this->NomVilleDesservie = "";
+
+            }
         }        
     }
     

@@ -47,11 +47,23 @@
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
             
-            $this->Mail = $dataRow['Mail'];
-            $this->MotDePasse = $dataRow['MotDePasse'];
-            $this->Statut = $dataRow['Statut'];
-            $this->IdRole = $dataRow['IdRole'];
+                $this->Mail = $dataRow['Mail'];
+                $this->MotDePasse = $dataRow['MotDePasse'];
+                $this->Statut = $dataRow['Statut'];
+                $this->IdRole = $dataRow['IdRole'];
+
+            }else{
+
+                $this->Mail = "";
+                $this->MotDePasse = "";
+                $this->Statut = "";
+                $this->IdRole = "";
+            }
         }     
         
         public function loginUtilisateur() {

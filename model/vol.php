@@ -60,7 +60,7 @@
             return false;
         }
 
-        // UPDATE
+        // Single
         public function getSingleVol(){
             $sqlQuery = "SELECT
                         NumVol, 
@@ -81,11 +81,23 @@
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
             
-            $this->AeroportDept = $dataRow['AeroportDept'];
-            $this->HDepart = $dataRow['HDepart'];
-            $this->AeroportArr = $dataRow['AeroportArr'];
-            $this->HArrivee = $dataRow['HArrivee'];
+                $this->AeroportDept = $dataRow['AeroportDept'];
+                $this->HDepart = $dataRow['HDepart'];
+                $this->AeroportArr = $dataRow['AeroportArr'];
+                $this->HArrivee = $dataRow['HArrivee'];
+
+            }else{
+
+                $this->AeroportDept = "";
+                $this->HDepart = "";
+                $this->AeroportArr = "";
+                $this->HArrivee = "";
+            }
         }        
 
         // UPDATE

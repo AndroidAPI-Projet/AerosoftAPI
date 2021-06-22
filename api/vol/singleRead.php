@@ -17,7 +17,7 @@
   
     $item->getSingleVol();
 
-    if($item->NumVol != null){
+    if($item->AeroportDept != null){
         // create array
         $vol_arr = array(
             "NumVol" =>  $item->NumVol,

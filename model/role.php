@@ -41,8 +41,17 @@
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
             
-            $this->RoleNom = $dataRow['RoleNom'];
+                $this->RoleNom = $dataRow['RoleNom'];
+
+            }else{
+
+                $this->RoleNom = ""; 
+            }
         }        
     }
     

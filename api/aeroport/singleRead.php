@@ -17,7 +17,7 @@
   
     $item->getSingleAeroport();
 
-    if($item->IdAeroport != null){
+    if($item->NomAeroport != null){
         // create array
         $aeroport_arr = array(
             "IdAeroport" =>  $item->IdAeroport,

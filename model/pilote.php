@@ -45,10 +45,21 @@
             $stmt->execute();
 
             $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $itemCount = $stmt->rowCount();
+
+            if($itemCount > 0){
             
-            $this->NomPilote = $dataRow['NomPilote'];
-            $this->PrenomPilote = $dataRow['PrenomPilote'];
-            $this->Matricule = $dataRow['Matricule'];
+                $this->NomPilote = $dataRow['NomPilote'];
+                $this->PrenomPilote = $dataRow['PrenomPilote'];
+                $this->Matricule = $dataRow['Matricule'];
+
+            }else{
+
+                $this->NomPilote = "";
+                $this->PrenomPilote = "";
+                $this->Matricule = "";
+            }
         }        
     }
     

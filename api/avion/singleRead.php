@@ -17,7 +17,7 @@
   
     $item->getSingleAvion();
 
-    if($item->NumAvion != null){
+    if($item->TypeAvion != null){
         // create array
         $avion_arr = array(
             "NumAvion" =>  $item->NumAvion,
