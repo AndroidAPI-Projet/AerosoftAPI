@@ -18,8 +18,12 @@
     $item->NumVol = $data->NumVol;
     
     if($item->deleteVol()){
-        echo json_encode("Le vol a été supprimé");
+        echo json_encode(
+            array("message" => "Le vol a été supprimé")
+        );
     } else{
-        echo json_encode("Le vol n'a pas pu être supprimé");
+        echo json_encode(
+            array("message" => "Le vol n'a pas pu être supprimé")
+        );
     }
 ?>

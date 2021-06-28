@@ -23,8 +23,12 @@
     $item->HArrivee = $data->HArrivee;
     
     if($item->updateVol()){
-        echo json_encode("Le vol a été mis à jour");
+        echo json_encode(
+            array("message" => "Le vol a été mis à jour")
+        );
     } else{
-        echo json_encode("Le vol n'a pas pu être mis à jour");
+        echo json_encode(
+            array("message" => "Le vol n'a pas pu être mis à jour")
+        );
     }
 ?>

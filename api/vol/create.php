@@ -22,8 +22,12 @@
     $item->HArrivee = $data->HArrivee;
     
     if($item->createVol()){
-        echo "Le vol a été créé avec succès";
+        echo json_encode(
+            array("message" => "Le vol a été créé avec succès")
+        );
     } else{
-        echo "Le vol n'a pas pu être créé";
+        echo json_encode(
+            array("message" => "Le vol n'a pas pu être créé")
+        );
     }
 ?>
