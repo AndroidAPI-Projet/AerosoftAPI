@@ -16,8 +16,12 @@
     $item->MotDePasse = $data->MotDePasse;
     
     if($item->loginUtilisateur()){
-        echo json_encode("Vous êtes connecté");
+        echo json_encode(
+            array("message" => "Vous êtes connecté")
+        );
     } else{
-        echo json_encode("Mot de passe ou login erroné");
+        echo json_encode(
+            array("message" => "Mot de passe ou login erroné")
+        );
     }
 ?>

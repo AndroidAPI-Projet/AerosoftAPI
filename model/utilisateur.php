@@ -76,7 +76,7 @@
             $stmt->bindParam(1, $this->Mail);
             $stmt->bindParam(2, $this->MotDePasse);
         
-            var_dump($stmt);
+            // var_dump($stmt);
 
             $stmt->execute();
             
