@@ -74,6 +74,10 @@ $router->map('POST', '/utilisateur/login', function($IdUtilisateur) {
     require __DIR__ . '/api/utilisateur/login.php';
 });
 
+$router->map('POST', '/utilisateur/create', function() {
+    require __DIR__ . '/api/utilisateur/create.php';
+});
+
 $router->map('GET', '/role', function() {
     require __DIR__ . '/api/role/read.php';
 });

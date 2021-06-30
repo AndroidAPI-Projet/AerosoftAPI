@@ -65,6 +65,38 @@
                 $this->IdRole = "";
             }
         }     
+
+        public function createUtilisateur(){
+            $sqlQuery = "INSERT INTO
+                        ". $this->db_table ."
+                    SET
+                        IdUtilisateur = :IdUtilisateur,
+                        Mail = :Mail, 
+                        MotDePasse = :MotDePasse, 
+                        Statut = :Statut,
+                        IdRole = :IdRole";
+        
+            $stmt = $this->conn->prepare($sqlQuery);
+        
+            // sanitize
+            $this->IdUtilisateur=htmlspecialchars(strip_tags($this->IdUtilisateur));
+            $this->Mail=htmlspecialchars(strip_tags($this->Mail));
+            $this->MotDePasse=htmlspecialchars(strip_tags($this->MotDePasse));
+            $this->Statut=htmlspecialchars(strip_tags($this->Statut));
+            $this->IdRole=htmlspecialchars(strip_tags($this->IdRole));
+        
+            // bind data
+            $stmt->bindParam(":IdUtilisateur", $this->IdUtilisateur);
+            $stmt->bindParam(":Mail", $this->Mail);
+            $stmt->bindParam(":MotDePasse", $this->MotDePasse);
+            $stmt->bindParam(":Statut", $this->Statut);
+            $stmt->bindParam(":IdRole", $this->IdRole);
+        
+            if($stmt->execute()){
+               return true;
+            }
+            return false;
+        }
         
         public function loginUtilisateur() {
             $sqlQuery = "SELECT * FROM " . $this->db_table . " WHERE Mail = ?  AND MotDePasse = ? AND Statut = true LIMIT 0,1";
